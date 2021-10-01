@@ -26,7 +26,7 @@
 
 using namespace std;
 
-int jisuf(int n) {
+int jisuf(int n) { // 자리수 확인하는 함수
     int k = 0;
     while (n != 0)
     {
@@ -45,20 +45,20 @@ int solution(string s) {
     if (len == 1) {
         return 1;
     }
-    for (int i = 1; i < len / 2 + 1; i++) { // 반넘으면 안됨
+    for (int i = 1; i < len / 2 + 1; i++) { //  i == 중복 체크할 문자열 길이
         int pull = len;
         string tmp = "1";
-        int cnt = 1; // 개수는 1부터
+        int cnt = 1; // cnt == 중복된 개수 aa 일시 2개라서 1부터시작함
         int k = 1;
-        int jisu = 0; // 지수 값 확인해야ㅗ딤
+        int jisu = 0; // jisu == 자리값 - xxxxxxxxxxxy 10xy 의 경우 4자리라 체크해야됭
         for (int j = 0; j < len; j += i) {
 
             int length = 0;
-            if (tmp == s.substr(j, i)) {
+            if (tmp == s.substr(j, i)) { // 중복된다면
                 pull = pull - i;
 
                 cnt++;
-                if (jisuf(cnt) != jisu) {
+                if (jisuf(cnt) != jisu) {  // 자리수 올라가면 +1 해주는 로직
                     jisu++;
                     pull++;
                 }
@@ -71,7 +71,7 @@ int solution(string s) {
         }
         v1[i] = pull;
     }
-    return *min_element(v1.begin() + 1, v1.end());
+    return *min_element(v1.begin() + 1, v1.end()); // 최솟값값
 
 }
 int main() {
