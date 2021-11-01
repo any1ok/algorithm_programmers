@@ -12,7 +12,7 @@ vector<int> solution(vector<int> answers) {
     int b_len = 8;
     int b_p =0;
     int c[10] = {3,3,1,1,2,2,4,4,5,5};
-    int c_len = 10;
+    int c_len = 10; //zzzzz
     int c_p=0;
     int q=0,w=0,e=0;
     for(int i=0;i<answers.size();i++){
