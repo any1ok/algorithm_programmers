@@ -8,15 +8,15 @@ int solution(vector<int> priorities, int location) {
         if (location == i) {
             p.second = true;
         }
-        v1.push_back(p); // Á¤·ÄÈÄ
+        v1.push_back(p); // ì •ë ¬í›„
     }
     vector<int> temp = priorities;
     sort(temp.begin(), temp.end());
     int pt = temp.size() - 1;
     int res = 0;
-    while (1) { // ¾Ë°í¸®ÁòÀÌ¶û ¶È°°ÀÌÇÔ
+    while (1) { // ì•Œê³ ë¦¬ì¦˜ì´ë‘ ë˜‘ê°™ì´í•¨
         int t1 = v1[0].first;
-        int t2 = v1[0].second;
+        int t2 = v1[0].second;/
         if (t1 == temp[pt - res]) {
             if (t2 == false) {
                 v1.erase(v1.begin());
